@@ -75,8 +75,8 @@ This is not just a lifestyle issue — it’s a **crisis of wasted human potenti
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/conscious-consumption.git
-cd conscious-consumption
+https://github.com/amreenkhan-1410/Conscious-Consumption.git
+cd Conscious-Consumption
 ```
 
 ### 2. Install dependencies
@@ -118,7 +118,7 @@ python app.py
 
 Hackathon Project by:
 
-* 👩‍💻 Akshitha + Team
+* 👩‍💻 Akshitha + Amreen + Nikitha
 
 ---
 
