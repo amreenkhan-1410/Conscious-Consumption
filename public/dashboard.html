@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Conscious Consumption</title>
+  <link rel="stylesheet" href="style.css">
+ 
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1><span class="white">C</span> <span class="gradient">C</span></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doctor_consult.html">Consult Doctor</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><span id="userWelcome" class="user-welcome"></span></li>
+        <li><button class="btn" id="authBtn" onclick="window.location.href='/auth'" style="display: none;">Login/SignUp</button></li>
+        <li><button class="btn logout-btn" id="logoutBtn" onclick="logout()">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Dashboard Section -->
+  <section class="dashboard-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+      <h2>Your Consumption</h2>
+      <button class="btn" onclick="loadDashboard()" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+        🔄 Refresh Data
+      </button>
+    </div>
+
+    <!-- Today Entry -->
+    <div id="todayEntry" class="entry-card highlight">
+      <p>Loading today's entry...</p>
+    </div>
+
+    <!-- Past Entries -->
+    <h3>Past Entries</h3>
+    <div id="dashboardContainer" class="entries-grid"></div>
+  </section>
+
+  <!-- Analytics Section -->
+  <section class="analytics">
+    <h2>Analytics</h2>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h4>Screen Time Trend</h4>
+        <canvas id="screenTimeChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Tag Usage</h4>
+        <canvas id="tagChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>App Usage</h4>
+        <canvas id="appChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalization Section -->
+  <section class="personalization">
+    <h2>Your Insights</h2>
+    <div id="insightsContainer" class="insight-box">
+      <p>Loading insights...</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Conscious Consumption. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

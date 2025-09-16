@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conscious Consumption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1><span class="white">C</span> <span class="gradient">C</span></h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="doctor_consult.html">Consult Doctor</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><span id="userWelcome" class="user-welcome"></span></li>
+          <li><button class="btn" id="authBtn" onclick="window.location.href='/auth'">Login/SignUp</button></li>
+          <li><button class="btn logout-btn" id="logoutBtn" onclick="logout()" style="display: none;">Logout</button></li>
+        </ul>
+      </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2><span class="white">Conscious</span> <span class="gradient">Consumption</span></h2>
+    <p>"Smoking, Scrolling, and Alcohol are Injurious to Health"</p>
+    <button class="btn" id="makeEntryBtn">Make an Entry</button>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <h3>How It Works</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>1. Log Your Usage</h4>
+        <p>Select apps, enter screen time, and reflect on how you felt.</p>
+      </div>
+      <div class="card">
+        <h4>2. AI Analysis</h4>
+        <p>Our AI detects emotional patterns and gives personalized nudges.</p>
+      </div>
+      <div class="card">
+        <h4>3. Dashboard</h4>
+        <p>View trends, visualizations, and motivational insights to stay mindful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-step Journal Modal -->
+  <div id="journalModal" class="modal">
+    <div class="modal-content">
+      
+      <!-- Step Indicator -->
+      <div class="step-indicator">
+        <div class="step-dot active" data-step="0"></div>
+        <div class="step-dot" data-step="1"></div>
+        <div class="step-dot" data-step="2"></div>
+      </div>
+      
+      <!-- Step 1: App Selection -->
+      <div class="step step-1 active">
+        <h3>Select Apps You Used Today</h3>
+        
+        <!-- App Categories Legend -->
+        <div class="app-categories">
+          <div class="category-legend distracting">
+            <div class="category-dot distracting"></div>
+            <span>Distracting Apps</span>
+          </div>
+          <div class="category-legend productive">
+            <div class="category-dot productive"></div>
+            <span>Productive Apps</span>
+          </div>
+        </div>
+        
+        <div class="app-icons">
+          <!-- Distracting Apps -->
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504929.png" alt="Netflix">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384068.png" alt="Snapchat">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Reddit">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504904.png" alt="Facebook">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504922.png" alt="Discord">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504921.png" alt="Telegram">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504923.png" alt="WhatsApp">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504924.png" alt="Spotify">
+          </div>
+          <div class="app distracting" title="Highly Distracting">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504925.png" alt="Games">
+          </div>
+          
+          <!-- Productive Apps -->
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504926.png" alt="Notion">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504927.png" alt="Evernote">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504928.png" alt="Trello">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504930.png" alt="Google Drive">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504931.png" alt="Calendar">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504932.png" alt="Gmail">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504933.png" alt="Slack">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504934.png" alt="Zoom">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504935.png" alt="Microsoft Teams">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504936.png" alt="Dropbox">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504937.png" alt="OneNote">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504938.png" alt="Todoist">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504939.png" alt="Pocket">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504940.png" alt="Medium">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504941.png" alt="LinkedIn">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504942.png" alt="GitHub">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504943.png" alt="VS Code">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504944.png" alt="Figma">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504945.png" alt="Canva">
+          </div>
+          <div class="app productive" title="Productive">
+            <img src="https://cdn-icons-png.flaticon.com/512/2504/2504946.png" alt="Grammarly">
+          </div>
+        </div>
+        <button class="btn nextBtn">Next</button>
+      </div>
+
+      <!-- Step 2: Screen Time -->
+      <div class="step step-2">
+        <h3>How Much Time Did You Spend?</h3>
+        <input type="range" id="timeRange" min="0" max="720" step="30" value="60">
+        <p><span id="timeValue">1.0</span> hours</p>
+        <button class="btn nextBtn">Next</button>
+      </div>
+
+      <!-- Step 3: Reflection & Tags -->
+      <div class="step step-3">
+        <h3>Make a Quick Reflection</h3>
+        <div class="reflection-box">
+          <textarea placeholder="Write your thoughts..."></textarea>
+          <span class="voice">🎤</span>
+        </div>
+        <h4>Tag Your Experience</h4>
+        <div class="tags">
+          <span class="tag">✅ Productive</span>
+          <span class="tag">🧘 Mindful Use</span>
+          <span class="tag">😵 Overwhelmed</span>
+          <span class="tag">⏳ Wasted Time</span>
+          <span class="tag">😌 Relaxed</span>
+          <span class="tag">🔥 Deep Dive</span>
+        </div>
+        <button class="btn closeBtn">Save Entry</button>
+        <button class="btn closeBtn">AI Analysis</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Conscious Consumption. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

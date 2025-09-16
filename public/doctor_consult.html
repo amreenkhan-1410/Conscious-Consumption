@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consult Doctor - Conscious Consumption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1><span class="white">Conscious</span> <span class="gradient">Consumption</span></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doctor_consult.html">Consult Doctor</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Consult a Doctor</h2>
+    <p>Find mental health and wellness experts to guide you on digital wellbeing.</p>
+  </section>
+
+  <!-- Doctors List -->
+  <section class="how-it-works">
+    <h3>Available Doctors</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Dr. Maya Reddy</h4>
+        <p>Digital Wellbeing Specialist</p>
+        <p>Experience: 5 years</p>
+        <button class="btn bookBtn">Book Appointment</button>
+      </div>
+      <div class="card">
+        <h4>Dr. Arjun Sharma</h4>
+        <p>Clinical Psychologist</p>
+        <p>Experience: 7 years</p>
+        <button class="btn bookBtn">Book Appointment</button>
+      </div>
+      <div class="card">
+        <h4>Dr. Priya Menon</h4>
+        <p>Mindfulness Coach</p>
+        <p>Experience: 4 years</p>
+        <button class="btn bookBtn">Book Appointment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <h3>Book an Appointment</h3>
+      <form id="bookingForm">
+        <label for="doctorName">Doctor Name</label>
+        <input type="text" id="doctorName" readonly>
+
+        <label for="userName">Your Name</label>
+        <input type="text" id="userName" placeholder="Enter your name" required>
+
+        <label for="userEmail">Email</label>
+        <input type="email" id="userEmail" placeholder="Enter your email" required>
+
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" required>
+
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" required>
+
+        <button type="submit" class="btn">Confirm Booking</button>
+        <button type="button" class="btn closeBookingBtn" style="background:#ee0979; margin-left:10px;">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Conscious Consumption. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Booking Modal
+    const bookingModal = document.getElementById("bookingModal");
+    const bookBtns = document.querySelectorAll(".bookBtn");
+    const closeBookingBtn = document.querySelector(".closeBookingBtn");
+    const doctorNameInput = document.getElementById("doctorName");
+    const bookingForm = document.getElementById("bookingForm");
+
+    bookBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const doctorName = btn.parentElement.querySelector("h4").innerText;
+        doctorNameInput.value = doctorName;
+        bookingModal.style.display = "flex";
+      });
+    });
+
+    closeBookingBtn.addEventListener("click", () => {
+      bookingModal.style.display = "none";
+    });
+
+    // Submit Booking
+    bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert(`Appointment booked with ${doctorNameInput.value}!`);
+      bookingModal.style.display = "none";
+      bookingForm.reset();
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener("click", (e) => {
+      if (e.target === bookingModal) bookingModal.style.display = "none";
+    });
+  </script>
+</body>
+</html>

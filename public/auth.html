@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Signup - Conscious Consumption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1><span class="white">C</span> <span class="gradient">C</span></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="doctor_consult.html">Consult Doctor</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Auth Container -->
+  <section class="auth-section">
+    <div class="auth-container">
+      <!-- Toggle Tabs -->
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-form" class="auth-form active">
+        <h2>Welcome Back</h2>
+        <p class="auth-subtitle">Sign in to continue your digital wellness journey</p>
+        
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" name="email" required>
+            <span class="error-message" id="loginEmailError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+            <span class="error-message" id="loginPasswordError"></span>
+          </div>
+          
+          <div class="form-options">
+            <label class="checkbox-container">
+              <input type="checkbox" id="rememberMe">
+              <span class="checkmark"></span>
+              Remember me
+            </label>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          
+          <button type="submit" class="btn auth-btn">
+            <span class="btn-text">Sign In</span>
+            <span class="btn-loader" style="display: none;">Signing in...</span>
+          </button>
+        </form>
+        
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+        
+        <div class="social-auth">
+          <button class="btn social-btn google-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google">
+            Continue with Google
+          </button>
+        </div>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form" class="auth-form">
+        <h2>Join the Movement</h2>
+        <p class="auth-subtitle">Start your journey to conscious digital consumption</p>
+        
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input type="text" id="signupName" name="name" required>
+            <span class="error-message" id="signupNameError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <input type="email" id="signupEmail" name="email" required>
+            <span class="error-message" id="signupEmailError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" name="password" required>
+            <span class="error-message" id="signupPasswordError"></span>
+            <div class="password-strength">
+              <div class="strength-bar">
+                <div class="strength-fill" id="strengthFill"></div>
+              </div>
+              <span class="strength-text" id="strengthText">Password strength</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <span class="error-message" id="confirmPasswordError"></span>
+          </div>
+          
+          <div class="form-options">
+            <label class="checkbox-container">
+              <input type="checkbox" id="agreeTerms" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn auth-btn">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-loader" style="display: none;">Creating account...</span>
+          </button>
+        </form>
+        
+        <div class="auth-divider">
+          <span>or</span>
+        </div>
+        
+        <div class="social-auth">
+          <button class="btn social-btn google-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google">
+            Sign up with Google
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Conscious Consumption. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+</body>
+</html>
