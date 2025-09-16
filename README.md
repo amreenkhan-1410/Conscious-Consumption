@@ -64,7 +64,7 @@ This is not just a lifestyle issue — it’s a **crisis of wasted human potenti
 ## 🛠️ Tech Stack
 
 * **Frontend:** HTML, CSS, JavaScript
-* **Backend:** Python (Flask)
+* **Backend:** Node js
 * **AI Integration:** Google Gemini API (`google-generativeai`)
 * **Database:** SQLite / JSON (for prototype stage)
 
