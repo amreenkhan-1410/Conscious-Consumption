@@ -79,13 +79,7 @@ https://github.com/amreenkhan-1410/Conscious-Consumption.git
 cd Conscious-Consumption
 ```
 
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Add your API Key
+### 2. Add your API Key
 
 Create a `.env` file:
 
@@ -93,13 +87,13 @@ Create a `.env` file:
 GEMINI_API_KEY=your_api_key_here
 ```
 
-### 4. Run the backend
+### 3. Run the backend
 
 ```bash
-python app.py
+node server.js
 ```
 
-### 5. Open the frontend
+### 4. Open the frontend
 
 * Open `index.html` in browser
 * Select tags → click **AI Analysis** → see personalized feedback
